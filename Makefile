@@ -1,7 +1,7 @@
 #!/bin/env make -f
 
 PACKAGE = $(shell basename $(shell pwd))
-VERSION = $(shell bash scripts/set-version)
+VERSION = $(shell bash scripts/set-version)-testing
 
 MAINTAINER = $(shell git config user.name) <$(shell git config user.email)>
 
