@@ -20,7 +20,7 @@ case "${1}" in
 	-f|--force)
 		# Remove any existing deb file.
 		cd "${poolDir}/b/${packageName}" || exit 1
-		! test -f "${packageName}_${VERSION}_${ARCH}.deb" || rm -v "${packageName}_${VERSION}_${ARCH}.deb"
+		test -f "${packageName}_${VERSION}_${ARCH}.deb" || rm -vf "${packageName}_${VERSION}_${ARCH}.deb"
 		cd "${workDir}" || exit 1
 	;;
 esac
