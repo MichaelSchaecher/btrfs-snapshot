@@ -1,7 +1,10 @@
 #!/bin/env make -f
 
 PACKAGE = $(shell basename $(shell pwd))
-VERSION = $(shell bash scripts/set-version)-testing
+RELEASE = $(shell bash scripts/set-version)
+RELEASE_TYPE = testing
+
+VERSION = $(RELEASE)-$(RELEASE_TYPE)
 
 MAINTAINER = $(shell git config user.name) <$(shell git config user.email)>
 
@@ -16,7 +19,7 @@ PACKAGE_DIR = package
 
 WORKING_DIR = $(shell pwd)
 
-DESCRIPTION = Manage BTRFS snapshots simply -
+DESCRIPTION = Manage BTRFS snapshots simply [Testing version] -
 LONG_DESCRIPTION = Maintain snapshots of on BTRFS filesystems configured \
 	the proper way.
 
